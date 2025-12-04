@@ -1,34 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useAuthStore } from './store/authStore'
+import Layout from './components/Layout/Layout'
+import Login from './pages/Auth/Login'
+import Dashboard from './pages/Dashboard/Dashboard'
+import Employees from './pages/Employees/EmployeeDetail'
+import EmployeeDetail from './pages/Employees/EmployeeDetail'
+import LeaveManagement from './pages/Leave/LeaveManagement'
+import Attendance from './pages/Attendance/Attendance'
+import TravelManagement from './pages/Travel/TravelManagement'
+import Reports from './pages/Reports/Reports'
+import Settings from './pages/Settings/Settings'
+import Profile from './pages/Profile/Profile'
+import MobileApp from './pages/Mobile/MobileApp'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { user, isAuthenticated } = useAuthStore()
+
+  if (!isAuthenticated) {
+    return <Login />
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/employees" element={<Employees />} />
+        <Route path="/employees/:id" element={<EmployeeDetail />} />
+        <Route path="/leave" element={<LeaveManagement />} />
+        <Route path="/attendance" element={<Attendance />} />
+        <Route path="/travel" element={<TravelManagement />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/mobile" element={<MobileApp />} />
+      </Routes>
+    </Layout>
   )
 }
 

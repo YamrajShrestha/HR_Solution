@@ -7,18 +7,18 @@ import {
   CheckCircleIcon, 
   XCircleIcon,
   CalendarIcon,
-  UserIcon,
+  // UserIcon,
   DownloadIcon,
   FilterIcon,
   EyeIcon
 } from 'lucide-react';
 import { toast } from 'react-toastify';
 import AttendanceCalendar from './AttendanceCalendar';
-import AttendanceStats from './AttendanceStats';
-import CheckInOut from './CheckInOut';
+// import AttendanceStats from './AttendanceStats';
+// import CheckInOut from './CheckInOut';
 import DataTable from '../../components/Common/DataTable';
 import Modal from '../../components/Common/Modal';
-import AttendanceDetailView from './AttendanceDetailView';
+// import AttendanceDetailView from './AttendanceDetailView';
 import DateRangePicker from '../../components/common/DateRangePicker';
 
 const Attendance = () => {
@@ -431,7 +431,7 @@ const AttendanceStats = ({ stats }) => (
   </div>
 );
 
-const CheckInOut = ({ todayStatus, onSuccess, onCancel }) => {
+const CheckInOut = ({ todayStatus, onSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [location, setLocation] = useState(null);
   const [isLocating, setIsLocating] = useState(false);

@@ -13,11 +13,11 @@ import {
 } from 'lucide-react';
 import { toast } from 'react-toastify';
 import LeaveRequestForm from './LeaveRequestForm';
-import LeaveBalanceCard from './LeaveBalanceCard';
-import LeaveStatusBadge from './LeaveStatusBadge';
+// import LeaveBalanceCard from './LeaveBalanceCard';
+// import LeaveStatusBadge from './LeaveStatusBadge';
 import Modal from '../../components/Common/Modal';
 import DataTable from '../../components/Common/DataTable';
-import DateRangePicker from '../../components/Common/DateRangePicker';
+import DateRangePicker from '../../components/common/DateRangePicker';
 
 const LeaveManagement = () => {
   const { user } = useAuthStore();

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useAuthStore } from '../../store/authStore'
-import { MenuIcon, UserIcon, LogoutIcon } from 'lucide-react'
+import { MenuIcon, UserIcon } from 'lucide-react'
+import { LuLogOut } from "react-icons/lu";
 
 const Header = ({ onMenuClick }) => {
   const { user, logout } = useAuthStore()
@@ -46,7 +47,7 @@ const Header = ({ onMenuClick }) => {
                   }}
                   className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  <LogoutIcon className="h-4 w-4 mr-2" />
+                  <LuLogOut className="h-4 w-4 mr-2" />
                   Logout
                 </button>
               </div>

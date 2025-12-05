@@ -7,18 +7,14 @@ import {
   CheckCircleIcon, 
   XCircleIcon,
   CalendarIcon,
-  // UserIcon,
   DownloadIcon,
   FilterIcon,
   EyeIcon
 } from 'lucide-react';
 import { toast } from 'react-toastify';
 import AttendanceCalendar from './AttendanceCalendar';
-// import AttendanceStats from './AttendanceStats';
-// import CheckInOut from './CheckInOut';
 import DataTable from '../../components/Common/DataTable';
 import Modal from '../../components/Common/Modal';
-// import AttendanceDetailView from './AttendanceDetailView';
 import DateRangePicker from '../../components/common/DateRangePicker';
 
 const Attendance = () => {
